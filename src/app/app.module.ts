@@ -7,6 +7,8 @@ import { ExamComponent } from './exam/exam.component';
 import { TeacherComponent } from './teacher/teacher.component';
 import { StudentComponent } from './student/student.component';
 import {FormsModule} from'@angular/forms'
+import {ReactiveFormsModule} from'@angular/forms'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +19,7 @@ import {FormsModule} from'@angular/forms'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [],

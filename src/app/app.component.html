@@ -18,15 +18,23 @@
 <br/><br/>
 
 
-<h3>Student 1</h3>
+<!-- <h3>Student 1</h3>
 <h4>Name: {{studinfo[0].name}}</h4>
 <h4>Age: {{studinfo[0].age}}</h4>
-<h4>Department: {{studinfo[0].dept}}</h4>
+<h4>Department: {{studinfo[0].dept}}</h4> -->
 <h4>Template driven form validation</h4>
 <form #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)">
-    <input type="email" required #name="ngModel" pattern="[a-zA-Z]+$" name="name" placeholder="Enter name"ngModel/><br/>
-    <span *ngIf="name.invalid &&name.touched" style="color:red;">Please enter a valid input</span><br/> 
-    <input type="password" required #password="ngModel" name="password" minlenght="2" placeholder="Enter password "ngModel/><br/>
-    <span *ngIf="password.invalid &&password.touched" style="color:red;">Please enter a valid input</span><br/> 
-    <Button [disabled]="loginForm.invalid">Login</Button>
+    <input type="email" required #name="ngModel" email  name="name" placeholder="Enter name" ngModel/><br/><br/>
+    <span *ngIf="name.invalid && name.touched" style="color:red;">Please enter a valid input</span><br/> 
+    <input type="password" required #password="ngModel" name="password" minlenght="2" placeholder="Enter password" ngModel/><br/>
+    <span *ngIf="password.invalid && password.touched" style="color:red;">Please enter a valid input</span><br/> 
+    <Button >Login</Button>
 </form>
+
+<h4>Reactive Form</h4>
+<form  [formGroup]="loginFormm" (ngSubmit)="loginUser1()">
+    <input type="text" placeholder="Enter name" formControlName="user"><br><br>
+    <input type="password" placeholder="Enter password" formControlName="password"><br><br>
+    <Button>Login</Button>
+</form>
+

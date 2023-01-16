@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormGroup,FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,14 @@ export class AppComponent {
 
   studinfo : any[] = [];
  
-  
+  loginFormm=new FormGroup({
+    user:new FormControl(''),
+    password:new FormControl(''),
+  })
+
+  loginUser1(){
+    console.warn(this.loginFormm.value)
+  }
   parentFunction(data:any){
     console.warn('app component: '+data)
     this.studinfo.push(data)
